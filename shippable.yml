@@ -23,4 +23,4 @@ build:
     - mvn --version    
     - ant -version 
     - gradle --version
-    - MY_JDK_SET="$(source shipctl jdk set oraclejdk11)"
+    #- MY_JDK_SET="$(source shipctl jdk set oraclejdk11)"
