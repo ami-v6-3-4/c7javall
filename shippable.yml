@@ -6,16 +6,15 @@ runtime:
 jdk:
   - openjdk7
   - openjdk8
-  - openjdk10
-  - openjdk11
+  - openjdk9
   - oraclejdk8
-  - oraclejdk11
+  - oraclejdk9
      
 build:
 
   pre_ci_boot:
     image_name: drydock/c7javall
-    image_tag: master
+    image_tag: v6.3.4
     pull: true
     
   ci:
@@ -25,11 +24,3 @@ build:
     - ant -version 
     - gradle --version
     - MY_JDK_SET="$(source shipctl jdk set oraclejdk11)"
-    - docker pull shippabledocker/sample_node_pvt:ecr
-    
-integrations:
-    
-  hub:
- #Docker integration
-    - integrationName: ship-docker
-      type: dockerRegistryLogin
